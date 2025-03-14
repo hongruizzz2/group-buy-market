@@ -16,21 +16,28 @@ import java.util.Date;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class GroupBuyActivity {
-    /** 自增ID */
+public class    GroupBuyActivity {
+
+    /** 自增 */
     private Long id;
     /** 活动ID */
     private Long activityId;
     /** 活动名称 */
     private String activityName;
+    /** 来源 */
+    private String source;
+    /** 渠道 */
+    private String channel;
+    /** 商品ID */
+    private String goodsId;
     /** 折扣ID */
     private String discountId;
-    /** 拼团方式（0：自动成团 1：达成目标成团） */
+    /** 拼团方式（0自动成团、1达成目标拼团） */
     private Integer groupType;
     /** 拼团次数限制 */
     private Integer takeLimitCount;
     /** 拼团目标 */
-    private String target;
+    private Integer target;
     /** 拼团时长（分钟） */
     private Integer validTime;
     /** 活动状态（0创建、1生效、2过期、3废弃） */
@@ -47,4 +54,5 @@ public class GroupBuyActivity {
     private Date createTime;
     /** 更新时间 */
     private Date updateTime;
+
 }

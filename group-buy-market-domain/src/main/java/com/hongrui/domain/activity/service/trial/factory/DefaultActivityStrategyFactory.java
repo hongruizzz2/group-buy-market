@@ -2,6 +2,8 @@ package com.hongrui.domain.activity.service.trial.factory;
 
 import com.hongrui.domain.activity.model.entity.MarketProductEntity;
 import com.hongrui.domain.activity.model.entity.TrialBalanceEntity;
+import com.hongrui.domain.activity.model.valobj.GroupBuyActivityDiscountVO;
+import com.hongrui.domain.activity.model.valobj.SkuVO;
 import com.hongrui.domain.activity.service.trial.node.RootNode;
 import com.hongrui.types.design.framework.tree.StrategyHandler;
 import lombok.AllArgsConstructor;
@@ -24,15 +26,19 @@ public class DefaultActivityStrategyFactory {
         this.rootNode = rootNode;
     }
 
-    public StrategyHandler<MarketProductEntity, DynamicContext, TrialBalanceEntity> strategyHandler(){
+    public StrategyHandler<MarketProductEntity, DynamicContext, TrialBalanceEntity> strategyHandler() {
         return rootNode;
     }
 
     @Data
     @Builder
+    @AllArgsConstructor
     @NoArgsConstructor
-//    @AllArgsConstructor
     public static class DynamicContext {
-
+        // 拼团活动营销配置值对象
+        private GroupBuyActivityDiscountVO groupBuyActivityDiscountVO;
+        // 商品信息
+        private SkuVO skuVO;
     }
+
 }
