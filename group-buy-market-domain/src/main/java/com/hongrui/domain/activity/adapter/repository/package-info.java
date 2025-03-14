@@ -1,0 +1,1 @@
+package com.hongrui.domain.activity.adapter.repository;
