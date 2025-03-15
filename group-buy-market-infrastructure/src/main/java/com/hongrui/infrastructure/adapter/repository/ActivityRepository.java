@@ -1,6 +1,7 @@
 package com.hongrui.infrastructure.adapter.repository;
 
 import com.hongrui.domain.activity.adapter.repository.IActivityRepository;
+import com.hongrui.domain.activity.model.valobj.DiscountTypeEnum;
 import com.hongrui.domain.activity.model.valobj.GroupBuyActivityDiscountVO;
 import com.hongrui.domain.activity.model.valobj.SkuVO;
 import com.hongrui.infrastructure.dao.IGroupBuyActivityDao;
@@ -44,7 +45,7 @@ public class ActivityRepository implements IActivityRepository {
                 .builder()
                 .discountName(groupBuyDiscountRes.getDiscountName())
                 .discountDesc(groupBuyDiscountRes.getDiscountDesc())
-                .discountType(groupBuyDiscountRes.getDiscountType())
+                .discountType(DiscountTypeEnum.get(groupBuyDiscountRes.getDiscountType()))
                 .marketPlan(groupBuyDiscountRes.getMarketPlan())
                 .marketExpr(groupBuyDiscountRes.getMarketExpr())
                 .tagId(groupBuyDiscountRes.getTagId())

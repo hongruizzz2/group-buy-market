@@ -5,16 +5,21 @@ import com.hongrui.domain.activity.model.entity.MarketProductEntity;
 import com.hongrui.domain.activity.model.entity.TrialBalanceEntity;
 import com.hongrui.domain.activity.model.valobj.GroupBuyActivityDiscountVO;
 import com.hongrui.domain.activity.model.valobj.SkuVO;
+import com.hongrui.domain.activity.service.discount.IDiscountCalculateService;
 import com.hongrui.domain.activity.service.trial.AbstractGroupBuyMarketSupport;
 import com.hongrui.domain.activity.service.trial.factory.DefaultActivityStrategyFactory;
 import com.hongrui.domain.activity.service.trial.thread.QueryGroupBuyActivityDiscountVOThreadTask;
 import com.hongrui.domain.activity.service.trial.thread.QuerySkuVOFromDBThreadTask;
 import com.hongrui.types.design.framework.tree.StrategyHandler;
+import com.hongrui.types.enums.ResponseCode;
+import com.hongrui.types.exception.AppException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import sun.nio.ch.ThreadPool;
 
 import javax.annotation.Resource;
+import java.math.BigDecimal;
+import java.util.Map;
 import java.util.concurrent.*;
 
 /**
@@ -30,6 +35,8 @@ public class MarketNode extends AbstractGroupBuyMarketSupport<MarketProductEntit
     private ThreadPoolExecutor threadPoolExecutor;
     @Resource
     private EndNode endNode;
+    @Resource
+    private Map<String, IDiscountCalculateService> discountCalculateServiceMap;
 
     @Override
     protected void multiThread(MarketProductEntity requestParameter, DefaultActivityStrategyFactory.DynamicContext
@@ -74,9 +81,24 @@ public class MarketNode extends AbstractGroupBuyMarketSupport<MarketProductEntit
                 JSON.toJSONString(requestParameter));
 
         // todo xfg 拼团优惠试算
+        GroupBuyActivityDiscountVO groupBuyActivityDiscountVO = dynamicContext.getGroupBuyActivityDiscountVO();
+        GroupBuyActivityDiscountVO.GroupBuyDiscount groupBuyDiscount = groupBuyActivityDiscountVO.getGroupBuyDiscount();
+
+        SkuVO skuVO = dynamicContext.getSkuVO();
+
+        IDiscountCalculateService discountCalculateService = discountCalculateServiceMap.get(groupBuyDiscount.getMarketPlan());
+
+        if (discountCalculateService == null) {
+            log.info("不存在{}类型的折扣计算服务, 支持类型为:{}", groupBuyDiscount.getMarketPlan(),
+                    JSON.toJSONString(discountCalculateServiceMap.keySet()));
+            throw new AppException(ResponseCode.E0001.getCode(), ResponseCode.E0001.getInfo());
+        }
+
+        // 折扣价格
+        BigDecimal deductionPrice = discountCalculateService.calculate(requestParameter.getUserId(), skuVO.getOriginalPrice(), groupBuyDiscount);
+        dynamicContext.setDeductionPrice(deductionPrice);
 
         return router(requestParameter, dynamicContext);
-
     }
 
     @Override
