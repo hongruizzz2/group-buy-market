@@ -117,6 +117,14 @@
                 <version>1.15</version>
             </dependency>
 
+            <!-- 引入Redis BitMap 存储人群标签数据 -->
+            <dependency>
+                <groupId>org.redisson</groupId>
+                <artifactId>redisson-spring-boot-starter</artifactId>
+                <version>3.26.0</version>
+            </dependency>
+
+
             <!-- 工程模块 -->
             <dependency>
                 <groupId>com.hongrui</groupId>
