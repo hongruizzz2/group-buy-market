@@ -14,6 +14,7 @@ import com.hongrui.types.design.framework.tree.StrategyHandler;
 import com.hongrui.types.enums.ResponseCode;
 import com.hongrui.types.exception.AppException;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import sun.nio.ch.ThreadPool;
 
@@ -34,9 +35,9 @@ public class MarketNode extends AbstractGroupBuyMarketSupport<MarketProductEntit
     @Resource
     private ThreadPoolExecutor threadPoolExecutor;
     @Resource
-    private EndNode endNode;
-    @Resource
     private ErrorNode errorNode;
+    @Resource
+    private TagNode tagNode;
     @Resource
     private Map<String, IDiscountCalculateService> discountCalculateServiceMap;
 
@@ -104,19 +105,19 @@ public class MarketNode extends AbstractGroupBuyMarketSupport<MarketProductEntit
 //        return router(requestParameter, dynamicContext);
         // 获取上下文数据
         GroupBuyActivityDiscountVO groupBuyActivityDiscountVO = dynamicContext.getGroupBuyActivityDiscountVO();
-        if (null == groupBuyActivityDiscountVO) {
+        if (groupBuyActivityDiscountVO == null) {
             return router(requestParameter, dynamicContext);
         }
 
         GroupBuyActivityDiscountVO.GroupBuyDiscount groupBuyDiscount = groupBuyActivityDiscountVO.getGroupBuyDiscount();
         SkuVO skuVO = dynamicContext.getSkuVO();
-        if (null == groupBuyDiscount || null == skuVO) {
+        if (groupBuyDiscount == null || skuVO == null) {
             return router(requestParameter, dynamicContext);
         }
 
         // 优惠试算
         IDiscountCalculateService discountCalculateService = discountCalculateServiceMap.get(groupBuyDiscount.getMarketPlan());
-        if (null == discountCalculateService) {
+        if (discountCalculateService == null) {
             log.info("不存在{}类型的折扣计算服务，支持类型为:{}", groupBuyDiscount.getMarketPlan(),
                     JSON.toJSONString(discountCalculateServiceMap.keySet()));
             throw new AppException(ResponseCode.E0001.getCode(), ResponseCode.E0001.getInfo());
@@ -139,6 +140,6 @@ public class MarketNode extends AbstractGroupBuyMarketSupport<MarketProductEntit
             return errorNode;
         }
 
-        return endNode;
+        return tagNode;
     }
 }
