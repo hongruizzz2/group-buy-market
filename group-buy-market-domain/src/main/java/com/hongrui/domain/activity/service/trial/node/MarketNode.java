@@ -36,6 +36,8 @@ public class MarketNode extends AbstractGroupBuyMarketSupport<MarketProductEntit
     @Resource
     private EndNode endNode;
     @Resource
+    private ErrorNode errorNode;
+    @Resource
     private Map<String, IDiscountCalculateService> discountCalculateServiceMap;
 
     @Override
@@ -46,6 +48,7 @@ public class MarketNode extends AbstractGroupBuyMarketSupport<MarketProductEntit
                 new QueryGroupBuyActivityDiscountVOThreadTask(
                     requestParameter.getSource(),
                     requestParameter.getChannel(),
+                    requestParameter.getGoodsId(),
                     repository
                 );
         FutureTask<GroupBuyActivityDiscountVO> groupBuyActivityDiscountVOFutureTask =
@@ -80,22 +83,49 @@ public class MarketNode extends AbstractGroupBuyMarketSupport<MarketProductEntit
         log.info("拼团商品查询试算服务-MarketNode userId:{} requestParameter:{}", requestParameter.getUserId(),
                 JSON.toJSONString(requestParameter));
 
-        // todo xfg 拼团优惠试算
+//        // todo xfg 拼团优惠试算
+//        GroupBuyActivityDiscountVO groupBuyActivityDiscountVO = dynamicContext.getGroupBuyActivityDiscountVO();
+//        GroupBuyActivityDiscountVO.GroupBuyDiscount groupBuyDiscount = groupBuyActivityDiscountVO.getGroupBuyDiscount();
+//
+//        SkuVO skuVO = dynamicContext.getSkuVO();
+//
+//        IDiscountCalculateService discountCalculateService = discountCalculateServiceMap.get(groupBuyDiscount.getMarketPlan());
+//
+//        if (discountCalculateService == null) {
+//            log.info("不存在{}类型的折扣计算服务, 支持类型为:{}", groupBuyDiscount.getMarketPlan(),
+//                    JSON.toJSONString(discountCalculateServiceMap.keySet()));
+//            throw new AppException(ResponseCode.E0001.getCode(), ResponseCode.E0001.getInfo());
+//        }
+//
+//        // 折扣价格
+//        BigDecimal deductionPrice = discountCalculateService.calculate(requestParameter.getUserId(), skuVO.getOriginalPrice(), groupBuyDiscount);
+//        dynamicContext.setDeductionPrice(deductionPrice);
+//
+//        return router(requestParameter, dynamicContext);
+        // 获取上下文数据
         GroupBuyActivityDiscountVO groupBuyActivityDiscountVO = dynamicContext.getGroupBuyActivityDiscountVO();
+        if (null == groupBuyActivityDiscountVO) {
+            return router(requestParameter, dynamicContext);
+        }
+
         GroupBuyActivityDiscountVO.GroupBuyDiscount groupBuyDiscount = groupBuyActivityDiscountVO.getGroupBuyDiscount();
-
         SkuVO skuVO = dynamicContext.getSkuVO();
+        if (null == groupBuyDiscount || null == skuVO) {
+            return router(requestParameter, dynamicContext);
+        }
 
+        // 优惠试算
         IDiscountCalculateService discountCalculateService = discountCalculateServiceMap.get(groupBuyDiscount.getMarketPlan());
-
-        if (discountCalculateService == null) {
-            log.info("不存在{}类型的折扣计算服务, 支持类型为:{}", groupBuyDiscount.getMarketPlan(),
+        if (null == discountCalculateService) {
+            log.info("不存在{}类型的折扣计算服务，支持类型为:{}", groupBuyDiscount.getMarketPlan(),
                     JSON.toJSONString(discountCalculateServiceMap.keySet()));
             throw new AppException(ResponseCode.E0001.getCode(), ResponseCode.E0001.getInfo());
         }
 
         // 折扣价格
-        BigDecimal deductionPrice = discountCalculateService.calculate(requestParameter.getUserId(), skuVO.getOriginalPrice(), groupBuyDiscount);
+        BigDecimal deductionPrice = discountCalculateService.calculate(requestParameter.getUserId(),
+                skuVO.getOriginalPrice(),
+                groupBuyDiscount);
         dynamicContext.setDeductionPrice(deductionPrice);
 
         return router(requestParameter, dynamicContext);
@@ -104,6 +134,11 @@ public class MarketNode extends AbstractGroupBuyMarketSupport<MarketProductEntit
     @Override
     public StrategyHandler<MarketProductEntity, DefaultActivityStrategyFactory.DynamicContext,
             TrialBalanceEntity> get(MarketProductEntity requestParameter, DefaultActivityStrategyFactory.DynamicContext dynamicContext) throws Exception {
+        if (dynamicContext.getGroupBuyActivityDiscountVO() == null || dynamicContext.getSkuVO() == null
+                || dynamicContext.getDeductionPrice() == null) {
+            return errorNode;
+        }
+
         return endNode;
     }
 }
