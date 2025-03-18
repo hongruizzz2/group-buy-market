@@ -19,4 +19,13 @@ public interface IActivityRepository {
 
     boolean isTagCrowdRange(String tagId, String userId);
 
+    boolean downgradeSwitch();
+
+    boolean cutRange(String userId);
+
+    /**
+     * 判断用户是否在白名单中
+     */
+    boolean isUserInWhitelist(String userId);
+
 }

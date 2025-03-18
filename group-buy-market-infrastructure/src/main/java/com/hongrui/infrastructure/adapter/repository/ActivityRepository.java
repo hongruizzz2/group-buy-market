@@ -13,6 +13,7 @@ import com.hongrui.infrastructure.dao.po.GroupBuyActivity;
 import com.hongrui.infrastructure.dao.po.GroupBuyDiscount;
 import com.hongrui.infrastructure.dao.po.SCSkuActivity;
 import com.hongrui.infrastructure.dao.po.Sku;
+import com.hongrui.infrastructure.dcc.DCCService;
 import com.hongrui.infrastructure.redis.IRedisService;
 import org.redisson.api.RBitSet;
 import org.springframework.stereotype.Repository;
@@ -37,6 +38,8 @@ public class ActivityRepository implements IActivityRepository {
     private ISCSkuActivityDao skuActivityDao;
     @Resource
     private IRedisService redisService;
+    @Resource
+    private DCCService dccService;
 
     @Override
     public GroupBuyActivityDiscountVO queryGroupBuyActivityDiscountVO(Long activityId) {
@@ -118,6 +121,21 @@ public class ActivityRepository implements IActivityRepository {
         }
         // 判断用户是否在人群中
         return bitSet.get(redisService.getIndexFromUserId(userId));
+    }
+
+    @Override
+    public boolean downgradeSwitch() {
+        return dccService.isDownGradeSwitch();
+    }
+
+    @Override
+    public boolean cutRange(String userId) {
+        return dccService.isCutRange(userId);
+    }
+
+    @Override
+    public boolean isUserInWhitelist(String userId) {
+        return dccService.isUserInWhitelist(userId);
     }
 
 }
