@@ -2,11 +2,10 @@ package com.hongrui.domain.trade.service;
 
 import com.hongrui.domain.trade.adapter.repository.ITradeRepository;
 import com.hongrui.domain.trade.model.aggregate.GroupBuyOrderAggregate;
-import com.hongrui.domain.trade.model.entity.MarketPayOrderEntity;
-import com.hongrui.domain.trade.model.entity.PayActivityEntity;
-import com.hongrui.domain.trade.model.entity.PayDiscountEntity;
-import com.hongrui.domain.trade.model.entity.UserEntity;
+import com.hongrui.domain.trade.model.entity.*;
 import com.hongrui.domain.trade.model.valobj.GroupBuyProcessVO;
+import com.hongrui.domain.trade.service.factory.TradeRuleFilterFactory;
+import com.hongrui.types.design.framework.link.model2.chain.BusinessLinkedList;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -23,6 +22,9 @@ public class TradeOrderService implements ITradeOrderService{
 
     @Resource
     private ITradeRepository repository;
+    @Resource
+    private BusinessLinkedList<TradeRuleCommandEntity, TradeRuleFilterFactory.DynamicContext, TradeRuleFilterBackEntity> tradeRuleFilter;
+
 
     @Override
     public MarketPayOrderEntity queryNoPayMarketPayOrderByOutTradeNo(String userId, String outTradeNo) {

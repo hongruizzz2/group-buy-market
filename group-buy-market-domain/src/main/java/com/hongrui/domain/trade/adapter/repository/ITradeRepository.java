@@ -1,6 +1,7 @@
 package com.hongrui.domain.trade.adapter.repository;
 
 import com.hongrui.domain.trade.model.aggregate.GroupBuyOrderAggregate;
+import com.hongrui.domain.trade.model.entity.GroupBuyActivityEntity;
 import com.hongrui.domain.trade.model.entity.MarketPayOrderEntity;
 import com.hongrui.domain.trade.model.valobj.GroupBuyProcessVO;
 
@@ -16,5 +17,9 @@ public interface ITradeRepository {
     MarketPayOrderEntity lockMarketPayOrder(GroupBuyOrderAggregate groupBuyOrderAggregate);
 
     GroupBuyProcessVO queryGroupBuyProgress(String teamId);
+
+    GroupBuyActivityEntity queryGroupBuyActivityEntityByActivityId(Long activityId);
+
+    Integer queryOrderCountByActivityId(Long activityId, String userId);
 
 }
