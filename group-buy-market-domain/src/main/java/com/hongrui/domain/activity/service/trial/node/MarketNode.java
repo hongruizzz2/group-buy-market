@@ -47,6 +47,7 @@ public class MarketNode extends AbstractGroupBuyMarketSupport<MarketProductEntit
         // 异步查询活动配置
         QueryGroupBuyActivityDiscountVOThreadTask queryGroupBuyActivityDiscountVOThreadTask =
                 new QueryGroupBuyActivityDiscountVOThreadTask(
+                        requestParameter.getActivityId(),
                     requestParameter.getSource(),
                     requestParameter.getChannel(),
                     requestParameter.getGoodsId(),

@@ -1,5 +1,6 @@
 package com.hongrui.domain.activity.model.entity;
 
+import com.hongrui.domain.activity.model.valobj.GroupBuyActivityDiscountVO;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -18,13 +19,14 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 public class TrialBalanceEntity {
+
     /** 商品ID */
     private String goodsId;
     /** 商品名称 */
     private String goodsName;
     /** 原始价格 */
     private BigDecimal originalPrice;
-    /** 折扣价格 */
+    /** 折扣金额 */
     private BigDecimal deductionPrice;
     /** 拼团目标数量 */
     private Integer targetCount;
@@ -36,4 +38,8 @@ public class TrialBalanceEntity {
     private Boolean isVisible;
     /** 是否可参与进团 */
     private Boolean isEnable;
+
+    /** 活动配置信息 */
+    private GroupBuyActivityDiscountVO groupBuyActivityDiscountVO;
+
 }

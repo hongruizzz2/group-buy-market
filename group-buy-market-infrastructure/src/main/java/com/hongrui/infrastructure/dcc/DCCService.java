@@ -25,7 +25,7 @@ public class DCCService {
     /**
      * 白名单用户列表，多个用户ID用逗号分隔
      */
-    @DCCValue("whitelistUsers:")
+    @DCCValue("whitelistUsers:none")
     private String whitelistUsers;
 
     /**

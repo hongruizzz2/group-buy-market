@@ -1,5 +1,6 @@
 package com.hongrui.types.exception;
 
+import com.hongrui.types.enums.ResponseCode;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -17,6 +18,11 @@ public class AppException extends RuntimeException {
 
     public AppException(String code) {
         this.code = code;
+    }
+
+    public AppException(ResponseCode responseCode) {
+        this.code = responseCode.getCode();
+        this.info = responseCode.getInfo();
     }
 
     public AppException(String code, Throwable cause) {
@@ -37,7 +43,7 @@ public class AppException extends RuntimeException {
 
     @Override
     public String toString() {
-        return "com.hongrui.x.api.types.exception.XApiException{" +
+        return "cn.bugstack.x.api.types.exception.XApiException{" +
                 "code='" + code + '\'' +
                 ", info='" + info + '\'' +
                 '}';
