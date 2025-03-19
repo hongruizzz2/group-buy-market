@@ -1,7 +1,9 @@
 package com.hongrui.domain.trade.adapter.repository;
 
 import com.hongrui.domain.trade.model.aggregate.GroupBuyOrderAggregate;
+import com.hongrui.domain.trade.model.aggregate.GroupBuyTeamSettlementAggregate;
 import com.hongrui.domain.trade.model.entity.GroupBuyActivityEntity;
+import com.hongrui.domain.trade.model.entity.GroupBuyTeamEntity;
 import com.hongrui.domain.trade.model.entity.MarketPayOrderEntity;
 import com.hongrui.domain.trade.model.valobj.GroupBuyProcessVO;
 
@@ -21,5 +23,9 @@ public interface ITradeRepository {
     GroupBuyActivityEntity queryGroupBuyActivityEntityByActivityId(Long activityId);
 
     Integer queryOrderCountByActivityId(Long activityId, String userId);
+
+    GroupBuyTeamEntity queryGroupBuyTeamByTeamId(String teamId);
+
+    void settlementMarketPayOrder(GroupBuyTeamSettlementAggregate groupBuyTeamSettlementAggregate);
 
 }
