@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6244ae48-3b2b-4be0-8a3d-ef5cc576402a" name="Changes" comment="feat: 拼团组队结算统计" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+        <option value="package-info" />
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="250318-hongrui-trade-settlement" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="customMavenHome" value="D:\maven\apache-maven-3.9.6" />
+        <option name="localRepository" value="D:\maven\repository" />
+        <option name="mavenHomeTypeForPersistence" value="CUSTOM" />
+        <option name="userSettingsFile" value="D:\maven\apache-maven-3.9.6\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="jdkForImporter" value="1.8" />
+        <option name="workspaceImportForciblyTurnedOn" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="jreName" value="1.8" />
+    <option name="vmOptions" value="-DarchetypeCatalog=local" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="2uHo44Ua4tojHscZATngxiA7zq5" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Docker.dev-ops/docker-compose-environment.yml.redis-admin: Compose Deployment.executor": "Run",
+    "Docker.dev-ops/docker-compose-environment.yml.redis: Compose Deployment.executor": "Run",
+    "Docker.dev-ops/docker-compose-environment.yml: Compose Deployment.executor": "Run",
+    "JUnit.GroupBuyActivityDaoTest.test_queryGroupBuyActivityList.executor": "Run",
+    "JUnit.GroupBuyDiscountDaoTest.test_queryGroupBuyDiscountList.executor": "Run",
+    "JUnit.IIndexGroupBuyMarketServiceTest.executor": "Run",
+    "JUnit.IIndexGroupBuyMarketServiceTest.test_indexMarketTrial.executor": "Run",
+    "JUnit.IIndexGroupBuyMarketServiceTest.test_indexMarketTrial_error.executor": "Debug",
+    "JUnit.IIndexGroupBuyMarketServiceTest.test_indexMarketTrial_no_tag.executor": "Run",
+    "JUnit.ITagServiceTest.test_get_tag_bitmap.executor": "Run",
+    "JUnit.ITagServiceTest.test_null_tag_bitmap.executor": "Run",
+    "JUnit.ITagServiceTest.test_tag_job.executor": "Run",
+    "JUnit.ITradeLockOrderServiceTest.executor": "Debug",
+    "JUnit.ITradeLockOrderServiceTest.test_lockMarketPayOrder.executor": "Debug",
+    "JUnit.ITradeOrderServiceTest.test_lockMarketPayOrder.executor": "Run",
+    "JUnit.Link01Test.test_model01_01.executor": "Run",
+    "JUnit.Link02Test.test_model01_01.executor": "Run",
+    "JUnit.MarketTradeControllerTest.test_lockMarketPayOrder.executor": "Run",
+    "JUnit.MarketTradeControllerTest.test_lockMarketPayOrder_teamId_not_null.executor": "Run",
+    "JUnit.TradeSettlementOrderServiceTest.test_settlementMarketPayOrder.executor": "Run",
+    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
+    "Maven.group-buy-market [clean].executor": "Run",
+    "Maven.group-buy-market [install].executor": "Run",
+    "Maven.group-buy-market-infrastructure [clean].executor": "Run",
+    "Maven.group-buy-market-infrastructure [install].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.Application.executor": "Run",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/group-buy-market",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.41609195",
+    "settings.editor.selected.configurable": "reference.settingsDialog.application.dockerMachine",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\group-buy-market\docs\dev-ops\mysql\sql" />
+      <recent name="D:\group-buy-market\group-buy-market-app\src\main\resources\mybatis\mapper" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.Application">
+    <configuration name="IIndexGroupBuyMarketServiceTest.test_indexMarketTrial" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="group-buy-market-app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.hongrui.test.domain.activity.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.hongrui.test.domain.activity" />
+      <option name="MAIN_CLASS_NAME" value="com.hongrui.test.domain.activity.IIndexGroupBuyMarketServiceTest" />
+      <option name="METHOD_NAME" value="test_indexMarketTrial" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ITagServiceTest.test_get_tag_bitmap" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="group-buy-market-app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.hongrui.test.domain.tag.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.hongrui.test.domain.tag" />
+      <option name="MAIN_CLASS_NAME" value="com.hongrui.test.domain.tag.ITagServiceTest" />
+      <option name="METHOD_NAME" value="test_get_tag_bitmap" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ITagServiceTest.test_tag_job" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="group-buy-market-app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.hongrui.test.domain.tag.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.hongrui.test.domain.tag" />
+      <option name="MAIN_CLASS_NAME" value="com.hongrui.test.domain.tag.ITagServiceTest" />
+      <option name="METHOD_NAME" value="test_tag_job" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Link01Test.test_model01_01" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="group-buy-market-app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.hongrui.test.types.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.hongrui.test.types" />
+      <option name="MAIN_CLASS_NAME" value="com.hongrui.test.types.Link01Test" />
+      <option name="METHOD_NAME" value="test_model01_01" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Link02Test.test_model01_01" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="group-buy-market-app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.hongrui.test.types.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.hongrui.test.types" />
+      <option name="MAIN_CLASS_NAME" value="com.hongrui.test.types.Link02Test" />
+      <option name="METHOD_NAME" value="test_model01_01" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="group-buy-market-app" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.hongrui.Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.Link02Test.test_model01_01" />
+        <item itemvalue="JUnit.Link01Test.test_model01_01" />
+        <item itemvalue="JUnit.ITagServiceTest.test_tag_job" />
+        <item itemvalue="JUnit.ITagServiceTest.test_get_tag_bitmap" />
+        <item itemvalue="JUnit.IIndexGroupBuyMarketServiceTest.test_indexMarketTrial" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6244ae48-3b2b-4be0-8a3d-ef5cc576402a" name="Changes" comment="" />
+      <created>1741914665748</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1741914665748</updated>
+      <workItem from="1741914666762" duration="38168000" />
+      <workItem from="1742026560767" duration="3607000" />
+      <workItem from="1742043163485" duration="1997000" />
+      <workItem from="1742118284652" duration="52716000" />
+      <workItem from="1742352925587" duration="284000" />
+    </task>
+    <task id="LOCAL-00001" summary="feat: 初始化工程项目">
+      <option name="closed" value="true" />
+      <created>1741917513556</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1741917513556</updated>
+    </task>
+    <task id="LOCAL-00002" summary="feat: README">
+      <option name="closed" value="true" />
+      <created>1741917581149</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1741917581149</updated>
+    </task>
+    <task id="LOCAL-00003" summary="feat: 试算模型抽象模板设计">
+      <option name="closed" value="true" />
+      <created>1741931285167</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1741931285167</updated>
+    </task>
+    <task id="LOCAL-00004" summary="feat: 多线程异步数据加载">
+      <option name="closed" value="true" />
+      <created>1741940036438</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1741940036438</updated>
+    </task>
+    <task id="LOCAL-00005" summary="fix: 多线程异步数据加载 - 补充">
+      <option name="closed" value="true" />
+      <created>1741942419101</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1741942419101</updated>
+    </task>
+    <task id="LOCAL-00006" summary="fix: 多线程异步数据加载 - 补充">
+      <option name="closed" value="true" />
+      <created>1742000212957</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1742000212957</updated>
+    </task>
+    <task id="LOCAL-00007" summary="feat: 策略模式优化折扣计算">
+      <option name="closed" value="true" />
+      <created>1742006409314</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1742006409314</updated>
+    </task>
+    <task id="LOCAL-00008" summary="feat: 人群标签数据采集">
+      <option name="closed" value="true" />
+      <created>1742174906438</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1742174906438</updated>
+    </task>
+    <task id="LOCAL-00009" summary="feat: 拆分库表关联关系">
+      <option name="closed" value="true" />
+      <created>1742180203315</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1742180203315</updated>
+    </task>
+    <task id="LOCAL-00010" summary="feat: 人群标签节点过滤">
+      <option name="closed" value="true" />
+      <created>1742200389256</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1742200389256</updated>
+    </task>
+    <task id="LOCAL-00011" summary="feat: 动态配置开关操作">
+      <option name="closed" value="true" />
+      <created>1742261328947</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1742261328947</updated>
+    </task>
+    <task id="LOCAL-00012" summary="feat: 拼团交易营销锁单">
+      <option name="closed" value="true" />
+      <created>1742267087843</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1742267087843</updated>
+    </task>
+    <task id="LOCAL-00013" summary="feat: 责任链抽象模板设计">
+      <option name="closed" value="true" />
+      <created>1742269211374</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1742269211374</updated>
+    </task>
+    <task id="LOCAL-00014" summary="feat: 交易规则责任链过滤">
+      <option name="closed" value="true" />
+      <created>1742282280571</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1742282280571</updated>
+    </task>
+    <task id="LOCAL-00015" summary="feat: 拼团组队结算统计">
+      <option name="closed" value="true" />
+      <created>1742352771549</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1742352771549</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="250318-hongrui-trade" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feat: 初始化工程项目" />
+    <MESSAGE value="feat: README" />
+    <MESSAGE value="feat: 试算模型抽象模板设计" />
+    <MESSAGE value="feat: 多线程异步数据加载" />
+    <MESSAGE value="fix: 多线程异步数据加载 - 补充" />
+    <MESSAGE value="feat: 策略模式优化折扣计算" />
+    <MESSAGE value="feat: 人群标签数据采集" />
+    <MESSAGE value="feat: 拆分库表关联关系" />
+    <MESSAGE value="feat: 人群标签节点过滤" />
+    <MESSAGE value="feat: 动态配置开关操作" />
+    <MESSAGE value="feat: 拼团交易营销锁单" />
+    <MESSAGE value="feat: 责任链抽象模板设计" />
+    <MESSAGE value="feat: 交易规则责任链过滤" />
+    <MESSAGE value="feat: 拼团组队结算统计" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: 拼团组队结算统计" />
+  </component>
+  <component name="XDebuggerManager">
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="com.hongrui.domain.activity.service.trial.node.MarketNode" memberName="repository" />
+      </pinned-members>
+    </pin-to-top-manager>
+  </component>
+</project>

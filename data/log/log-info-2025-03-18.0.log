@@ -1,0 +1,66 @@
+25-03-18.09:12:45.668 [main            ] INFO  Application            - Starting Application using Java 1.8.0_391 on LAPTOP-ERGMVDKD with PID 117456 (D:\group-buy-market\group-buy-market-app\target\classes started by LENOVO in D:\group-buy-market)
+25-03-18.09:12:45.669 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+25-03-18.09:12:46.259 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-03-18.09:12:46.261 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-03-18.09:12:46.285 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+25-03-18.09:12:46.450 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisClientConfig' of type [com.hongrui.config.RedisClientConfig$$EnhancerBySpringCGLIB$$1cf57ca9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-03-18.09:12:46.493 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redis.sdk.config-com.hongrui.config.RedisClientConfigProperties' of type [com.hongrui.config.RedisClientConfigProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-03-18.09:12:46.634 [main            ] INFO  Version                - Redisson 3.26.0
+25-03-18.09:12:47.249 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:16379
+25-03-18.09:12:47.258 [redisson-netty-1-14] INFO  ConnectionsHolder      - 5 connections initialized for localhost/127.0.0.1:16379
+25-03-18.09:12:47.302 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redissonClient' of type [org.redisson.Redisson] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-03-18.09:12:47.460 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8091 (http)
+25-03-18.09:12:47.467 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
+25-03-18.09:12:47.467 [main            ] INFO  StandardService        - Starting service [Tomcat]
+25-03-18.09:12:47.467 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
+25-03-18.09:12:47.565 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
+25-03-18.09:12:47.565 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1871 ms
+25-03-18.09:12:48.331 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-03-18.09:12:48.359 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8091"]
+25-03-18.09:12:48.370 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 8091 (http) with context path ''
+25-03-18.09:12:48.381 [main            ] INFO  Application            - Started Application in 3.025 seconds (JVM running for 3.997)
+25-03-18.09:12:49.301 [RMI TCP Connection(1)-100.105.81.111] INFO  [/]                    - Initializing Spring DispatcherServlet 'dispatcherServlet'
+25-03-18.09:12:49.302 [RMI TCP Connection(1)-100.105.81.111] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
+25-03-18.09:12:49.302 [RMI TCP Connection(2)-100.105.81.111] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-03-18.09:12:49.302 [RMI TCP Connection(1)-100.105.81.111] INFO  DispatcherServlet      - Completed initialization in 0 ms
+25-03-18.09:12:50.176 [RMI TCP Connection(2)-100.105.81.111] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-03-18.09:13:37.672 [http-nio-8091-exec-1] INFO  DCCController          - DCC 动态配置值变更 key:downgradeSwitch value:0
+25-03-18.09:13:37.677 [redisson-3-7    ] INFO  DCCValueBeanFactory    - DCC 节点监听，动态设置值 group_buy_market_dcc_downgradeSwitch 0
+25-03-18.09:14:16.801 [http-nio-8091-exec-3] INFO  DCCController          - DCC 动态配置值变更 key:cutRange value:100
+25-03-18.09:14:16.808 [redisson-3-8    ] INFO  DCCValueBeanFactory    - DCC 节点监听，动态设置值 group_buy_market_dcc_cutRange 100
+25-03-18.09:15:46.357 [http-nio-8091-exec-6] INFO  DCCController          - DCC 动态配置值变更 key:cutRange value:0
+25-03-18.09:15:46.367 [redisson-3-9    ] INFO  DCCValueBeanFactory    - DCC 节点监听，动态设置值 group_buy_market_dcc_cutRange 0
+25-03-18.09:16:04.812 [http-nio-8091-exec-7] INFO  DCCController          - DCC 动态配置值变更 key:downgradeSwitch value:0
+25-03-18.09:16:04.820 [redisson-3-10   ] INFO  DCCValueBeanFactory    - DCC 节点监听，动态设置值 group_buy_market_dcc_downgradeSwitch 0
+25-03-18.09:28:21.281 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-03-18.09:28:21.290 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-03-18.10:59:58.104 [main            ] INFO  Application            - Starting Application using Java 1.8.0_391 on LAPTOP-ERGMVDKD with PID 117688 (D:\group-buy-market\group-buy-market-app\target\classes started by LENOVO in D:\group-buy-market)
+25-03-18.10:59:58.105 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+25-03-18.10:59:58.556 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-03-18.10:59:58.557 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-03-18.10:59:58.575 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+25-03-18.10:59:58.705 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisClientConfig' of type [com.hongrui.config.RedisClientConfig$$EnhancerBySpringCGLIB$$9647d2b5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-03-18.10:59:58.735 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redis.sdk.config-com.hongrui.config.RedisClientConfigProperties' of type [com.hongrui.config.RedisClientConfigProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-03-18.10:59:58.842 [main            ] INFO  Version                - Redisson 3.26.0
+25-03-18.10:59:59.415 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:16379
+25-03-18.10:59:59.422 [redisson-netty-1-14] INFO  ConnectionsHolder      - 5 connections initialized for localhost/127.0.0.1:16379
+25-03-18.10:59:59.461 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redissonClient' of type [org.redisson.Redisson] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-03-18.10:59:59.597 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8091 (http)
+25-03-18.10:59:59.603 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
+25-03-18.10:59:59.604 [main            ] INFO  StandardService        - Starting service [Tomcat]
+25-03-18.10:59:59.604 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
+25-03-18.10:59:59.697 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
+25-03-18.10:59:59.697 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1572 ms
+25-03-18.11:00:00.409 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-03-18.11:00:00.434 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8091"]
+25-03-18.11:00:00.441 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 8091 (http) with context path ''
+25-03-18.11:00:00.449 [main            ] INFO  Application            - Started Application in 2.606 seconds (JVM running for 3.527)
+25-03-18.11:00:00.565 [RMI TCP Connection(1)-100.105.81.111] INFO  [/]                    - Initializing Spring DispatcherServlet 'dispatcherServlet'
+25-03-18.11:00:00.565 [RMI TCP Connection(1)-100.105.81.111] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
+25-03-18.11:00:00.565 [RMI TCP Connection(1)-100.105.81.111] INFO  DispatcherServlet      - Completed initialization in 0 ms
+25-03-18.11:00:01.414 [RMI TCP Connection(3)-100.105.81.111] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-03-18.11:00:02.021 [RMI TCP Connection(3)-100.105.81.111] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-03-18.11:00:13.143 [http-nio-8091-exec-1] INFO  DCCController          - DCC 动态配置值变更 key:cutRange value:100
+25-03-18.11:00:13.151 [redisson-3-7    ] INFO  DCCValueBeanFactory    - DCC 节点监听，动态设置值 group_buy_market_dcc_cutRange 100
+25-03-18.11:04:30.355 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-03-18.11:04:30.364 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
