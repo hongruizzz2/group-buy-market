@@ -9,7 +9,7 @@ import com.hongrui.domain.trade.model.entity.MarketPayOrderEntity;
 import com.hongrui.domain.trade.model.entity.PayActivityEntity;
 import com.hongrui.domain.trade.model.entity.PayDiscountEntity;
 import com.hongrui.domain.trade.model.entity.UserEntity;
-import com.hongrui.domain.trade.service.ITradeOrderService;
+import com.hongrui.domain.trade.service.ITradeLockOrderService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -21,18 +21,18 @@ import javax.annotation.Resource;
 /**
  * @author hongrui
  * @description 交易订单服务测试
- * @date 2025-03-18 10:48
+ * @date 2025-03-18 16:47
  */
 @Slf4j
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class ITradeOrderServiceTest {
+public class ITradeLockOrderServiceTest {
 
     @Resource
     private IIndexGroupBuyMarketService indexGroupBuyMarketService;
 
     @Resource
-    private ITradeOrderService tradeOrderService;
+    private ITradeLockOrderService tradeOrderService;
 
     @Test
     public void test_lockMarketPayOrder() throws Exception {

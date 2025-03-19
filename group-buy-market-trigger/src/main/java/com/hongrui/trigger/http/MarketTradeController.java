@@ -14,7 +14,7 @@ import com.hongrui.domain.trade.model.entity.PayActivityEntity;
 import com.hongrui.domain.trade.model.entity.PayDiscountEntity;
 import com.hongrui.domain.trade.model.entity.UserEntity;
 import com.hongrui.domain.trade.model.valobj.GroupBuyProcessVO;
-import com.hongrui.domain.trade.service.ITradeOrderService;
+import com.hongrui.domain.trade.service.ITradeLockOrderService;
 import com.hongrui.types.enums.ResponseCode;
 import com.hongrui.types.exception.AppException;
 import lombok.extern.slf4j.Slf4j;
@@ -38,7 +38,7 @@ public class MarketTradeController implements IMarketTradeService {
     @Resource
     private IIndexGroupBuyMarketService indexGroupBuyMarketService;
     @Resource
-    private ITradeOrderService tradeOrderService;
+    private ITradeLockOrderService tradeOrderService;
 
     /**
      * 拼团营销锁单
@@ -84,8 +84,8 @@ public class MarketTradeController implements IMarketTradeService {
 
             // 判断拼团锁单是否完成了目标
             if (null != teamId) {
-                GroupBuyProcessVO groupBuyProcessVO = tradeOrderService.queryGroupBuyProgress(teamId);
-                if (null != groupBuyProcessVO && Objects.equals(groupBuyProcessVO.getTargetCount(), groupBuyProcessVO.getLockCount())) {
+                GroupBuyProcessVO groupBuyProgressVO = tradeOrderService.queryGroupBuyProgress(teamId);
+                if (null != groupBuyProgressVO && Objects.equals(groupBuyProgressVO.getTargetCount(), groupBuyProgressVO.getLockCount())) {
                     log.info("交易锁单拦截-拼单目标已达成:{} {}", userId, teamId);
                     return Response.<LockMarketPayOrderResponseDTO>builder()
                             .code(ResponseCode.E0006.getCode())

@@ -8,17 +8,10 @@
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
-        <option value="$PROJECT_DIR$/group-buy-market-types/pom.xml" />
-        <option value="$PROJECT_DIR$/group-buy-market-infrastructure/pom.xml" />
-        <option value="$PROJECT_DIR$/group-buy-market-api/pom.xml" />
-        <option value="$PROJECT_DIR$/group-buy-market-app/pom.xml" />
-        <option value="$PROJECT_DIR$/group-buy-market-domain/pom.xml" />
-        <option value="$PROJECT_DIR$/group-buy-market-trigger/pom.xml" />
         <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>

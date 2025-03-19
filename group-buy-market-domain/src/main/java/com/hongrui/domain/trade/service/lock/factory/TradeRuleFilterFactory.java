@@ -1,10 +1,10 @@
-package com.hongrui.domain.trade.service.factory;
+package com.hongrui.domain.trade.service.lock.factory;
 
 import com.hongrui.domain.trade.model.entity.GroupBuyActivityEntity;
 import com.hongrui.domain.trade.model.entity.TradeRuleCommandEntity;
 import com.hongrui.domain.trade.model.entity.TradeRuleFilterBackEntity;
-import com.hongrui.domain.trade.service.filter.ActivityUsabilityRuleFilter;
-import com.hongrui.domain.trade.service.filter.UserTakeLimitRuleFilter;
+import com.hongrui.domain.trade.service.lock.filter.ActivityUsabilityRuleFilter;
+import com.hongrui.domain.trade.service.lock.filter.UserTakeLimitRuleFilter;
 import com.hongrui.types.design.framework.link.model2.LinkArmory;
 import com.hongrui.types.design.framework.link.model2.chain.BusinessLinkedList;
 import lombok.AllArgsConstructor;
