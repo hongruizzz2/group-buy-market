@@ -5,7 +5,7 @@ import com.hongrui.domain.trade.model.aggregate.GroupBuyOrderAggregate;
 import com.hongrui.domain.trade.model.entity.*;
 import com.hongrui.domain.trade.model.valobj.GroupBuyProcessVO;
 import com.hongrui.domain.trade.service.ITradeLockOrderService;
-import com.hongrui.domain.trade.service.lock.factory.TradeRuleFilterFactory;
+import com.hongrui.domain.trade.service.lock.factory.TradeLockRuleFilterFactory;
 import com.hongrui.types.design.framework.link.model2.chain.BusinessLinkedList;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -24,7 +24,7 @@ public class TradeLockOrderService implements ITradeLockOrderService {
     @Resource
     private ITradeRepository repository;
     @Resource
-    private BusinessLinkedList<TradeRuleCommandEntity, TradeRuleFilterFactory.DynamicContext, TradeRuleFilterBackEntity> tradeRuleFilter;
+    private BusinessLinkedList<TradeRuleCommandEntity, TradeLockRuleFilterFactory.DynamicContext, TradeRuleFilterBackEntity> tradeRuleFilter;
 
     @Override
     public MarketPayOrderEntity queryNoPayMarketPayOrderByOutTradeNo(String userId, String outTradeNo) {
@@ -46,7 +46,7 @@ public class TradeLockOrderService implements ITradeLockOrderService {
                         .activityId(payActivityEntity.getActivityId())
                         .userId(userEntity.getUserId())
                         .build(),
-                new TradeRuleFilterFactory.DynamicContext());
+                new TradeLockRuleFilterFactory.DynamicContext());
 
         // 已参与拼团量 - 用于构建数据库唯一索引使用，确保用户只能在一个活动上参与固定的次数
         Integer userTakeOrderCount = tradeRuleFilterBackEntity.getUserTakeOrderCount();

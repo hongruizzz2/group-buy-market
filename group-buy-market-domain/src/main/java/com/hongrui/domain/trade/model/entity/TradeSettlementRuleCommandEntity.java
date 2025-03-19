@@ -9,14 +9,14 @@ import java.util.Date;
 
 /**
  * @author hongrui
- * @description 交易支付订单实体对象
- * @date 2025-03-18 16:04
+ * @description 拼团交易结算规则命令
+ * @date 2025-03-19 13:38
  */
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class TradePaySuccessEntity {
+public class TradeSettlementRuleCommandEntity {
 
     /** 渠道 */
     private String source;

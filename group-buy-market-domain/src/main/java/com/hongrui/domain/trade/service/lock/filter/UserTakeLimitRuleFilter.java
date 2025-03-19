@@ -4,7 +4,7 @@ import com.hongrui.domain.trade.adapter.repository.ITradeRepository;
 import com.hongrui.domain.trade.model.entity.GroupBuyActivityEntity;
 import com.hongrui.domain.trade.model.entity.TradeRuleCommandEntity;
 import com.hongrui.domain.trade.model.entity.TradeRuleFilterBackEntity;
-import com.hongrui.domain.trade.service.lock.factory.TradeRuleFilterFactory;
+import com.hongrui.domain.trade.service.lock.factory.TradeLockRuleFilterFactory;
 import com.hongrui.types.design.framework.link.model2.handler.ILogicHandler;
 import com.hongrui.types.enums.ResponseCode;
 import com.hongrui.types.exception.AppException;
@@ -20,13 +20,13 @@ import javax.annotation.Resource;
  */
 @Slf4j
 @Service
-public class UserTakeLimitRuleFilter implements ILogicHandler<TradeRuleCommandEntity, TradeRuleFilterFactory.DynamicContext, TradeRuleFilterBackEntity> {
+public class UserTakeLimitRuleFilter implements ILogicHandler<TradeRuleCommandEntity, TradeLockRuleFilterFactory.DynamicContext, TradeRuleFilterBackEntity> {
 
     @Resource
     private ITradeRepository repository;
 
     @Override
-    public TradeRuleFilterBackEntity apply(TradeRuleCommandEntity requestParameter, TradeRuleFilterFactory.DynamicContext dynamicContext) throws Exception {
+    public TradeRuleFilterBackEntity apply(TradeRuleCommandEntity requestParameter, TradeLockRuleFilterFactory.DynamicContext dynamicContext) throws Exception {
         log.info("交易规则过滤-用户参与次数校验{} activityId:{}", requestParameter.getUserId(), requestParameter.getActivityId());
 
         GroupBuyActivityEntity groupBuyActivity = dynamicContext.getGroupBuyActivity();

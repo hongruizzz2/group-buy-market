@@ -3,7 +3,6 @@
 <mapper namespace="com.hongrui.infrastructure.dao.IGroupBuyOrderListDao">
 
     <resultMap id="dataMap" type="com.hongrui.infrastructure.dao.po.GroupBuyOrderList">
-        <id column="id" property="id"/>
         <result column="user_id" property="userId"/>
         <result column="team_id" property="teamId"/>
         <result column="order_id" property="orderId"/>
@@ -17,6 +16,7 @@
         <result column="deduction_price" property="deductionPrice"/>
         <result column="status" property="status"/>
         <result column="out_trade_no" property="outTradeNo"/>
+        <result column="out_trade_time" property="outTradeTime"/>
         <result column="biz_id" property="bizId"/>
         <result column="create_time" property="createTime"/>
         <result column="update_time" property="updateTime"/>
@@ -51,7 +51,7 @@
 
     <update id="updateOrderStatus2COMPLETE" parameterType="com.hongrui.infrastructure.dao.po.GroupBuyOrderList">
         update group_buy_order_list
-        set status = 1, update_time = now()
+        set status = 1, out_trade_time = #{outTradeTime}, update_time = now()
         where out_trade_no = #{outTradeNo} and user_id = #{userId}
     </update>
 

@@ -1,9 +1,13 @@
 package com.hongrui.infrastructure.dcc;
 
 import com.hongrui.types.annotations.DCCValue;
+import com.hongrui.types.common.Constants;
 import io.micrometer.core.instrument.config.MeterFilter;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
+
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * @author hongrui
@@ -27,6 +31,9 @@ public class DCCService {
      */
     @DCCValue("whitelistUsers:none")
     private String whitelistUsers;
+
+    @DCCValue("scBlacklist:s02c02")
+    private String scBlacklist;
 
     /**
      * 是否降级
@@ -60,13 +67,21 @@ public class DCCService {
             return false;
         }
 
-        String[] users = whitelistUsers.split(",");
+        String[] users = whitelistUsers.split(Constants.SPLIT);
         for (String user : users) {
             if (user.trim().equals(userId)) {
                 return true;
             }
         }
         return false;
+    }
+
+    /**
+     * 判断黑名单拦截渠道，true 拦截、false 放行
+     */
+    public boolean isSCBlackIntercept(String source, String channel) {
+        List<String> list = Arrays.asList(scBlacklist.split(Constants.SPLIT));
+        return list.contains(source + channel);
     }
 
 }

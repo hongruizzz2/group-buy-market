@@ -10,14 +10,14 @@ import java.util.Date;
 
 /**
  * @author hongrui
- * @description 拼团组队实体对象
- * @date 2025-03-18 15:59
+ * @description 拼团交易结算规则反馈实体
+ * @date 2025-03-19 13:38
  */
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class GroupBuyTeamEntity {
+public class TradeSettlementRuleFilterBackEntity {
 
     /** 拼单组队ID */
     private String teamId;
@@ -35,5 +35,6 @@ public class GroupBuyTeamEntity {
     private Date validStartTime;
     /** 拼团结束时间 - 拼团有效时长 */
     private Date validEndTime;
+
 
 }

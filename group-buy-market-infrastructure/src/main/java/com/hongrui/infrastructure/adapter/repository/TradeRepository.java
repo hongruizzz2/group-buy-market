@@ -15,6 +15,7 @@ import com.hongrui.infrastructure.dao.po.GroupBuyActivity;
 import com.hongrui.infrastructure.dao.po.GroupBuyOrder;
 import com.hongrui.infrastructure.dao.po.GroupBuyOrderList;
 import com.hongrui.infrastructure.dao.po.NotifyTask;
+import com.hongrui.infrastructure.dcc.DCCService;
 import com.hongrui.types.common.Constants;
 import com.hongrui.types.enums.ActivityStatusEnumVO;
 import com.hongrui.types.enums.GroupBuyOrderEnumVO;
@@ -49,6 +50,8 @@ public class TradeRepository implements ITradeRepository {
     private IGroupBuyOrderListDao groupBuyOrderListDao;
     @Resource
     private INotifyTaskDao notifyTaskDao;
+    @Resource
+    private DCCService dccService;
 
     @Override
     public MarketPayOrderEntity queryMarketPayOrderEntityByOutTradeNo(String userId, String outTradeNo) {
@@ -237,6 +240,11 @@ public class TradeRepository implements ITradeRepository {
             notifyTaskDao.insert(notifyTask);
         }
 
+    }
+
+    @Override
+    public boolean isSCBlackIntercept(String source, String channel) {
+        return dccService.isSCBlackIntercept(source, channel);
     }
 
 }
